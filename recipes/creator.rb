@@ -40,7 +40,7 @@ end
 windows_package 'Qt Creator' do
   package_name "Qt Creator #{node['qtcreator']['version']} (#{node['qtcreator']['edition']})"
   source node['qtcreator']['source'] || creator_source
-  checksum node['qtcreator']['checksum'] if node['qt']['creator']['checksum']
+  checksum node['qtcreator']['checksum'] if node['qtcreator']['checksum']
   installer_type :custom
   action :install
   options creator_install_opt
