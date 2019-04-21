@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-creator_config_path = "#{Chef::Config[:file_cache_path]}/qt5.qs"
+creator_config_path = "#{Chef::Config[:file_cache_path]}/qtcreator.qs"
 
 version = node['qtcreator']['version']
 major_version = version[0..version.length-3]
