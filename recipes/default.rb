@@ -30,6 +30,7 @@ qt5_source = "#{url_prefix}/#{major_version}/#{version}/qt-opensource-windows-x8
 qt5_install_opt = "--script #{qt5_config_path}"
 
 windows_package 'Qt' do
+  extend Qt::HelperHelpers
   package_name "Qt #{version}"
   source node['qt']['source'] || qt5_source 
   checksum node['qt']['checksum'] if node['qt']['checksum']
@@ -37,4 +38,5 @@ windows_package 'Qt' do
   action :install
   options qt5_install_opt
   timeout node['qt']['timeout'] || 1500
+  not_if { is_local_system_user? }
 end

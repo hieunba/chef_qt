@@ -38,6 +38,7 @@ template creator_config_path do
 end
 
 windows_package 'Qt Creator' do
+  extend Qt::HelperHelpers
   package_name "Qt Creator #{node['qtcreator']['version']} (#{node['qtcreator']['edition']})"
   source node['qtcreator']['source'] || creator_source
   checksum node['qtcreator']['checksum'] if node['qtcreator']['checksum']
@@ -45,4 +46,5 @@ windows_package 'Qt Creator' do
   action :install
   options creator_install_opt
   timeout node['qtcreator']['timeout'] || 1500
+  not_if { is_local_system_user? }
 end
