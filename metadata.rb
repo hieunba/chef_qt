@@ -4,7 +4,7 @@ maintainer_email 'hnghiemba@pm.me'
 license 'Apache-2.0'
 description 'Installs/Configures qt'
 long_description 'Installs/Configures qt'
-version '0.1.1'
+version '0.1.2'
 chef_version '>= 13.0'
 
 supports 'windows'
